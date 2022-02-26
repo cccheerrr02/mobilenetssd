@@ -164,6 +164,15 @@ def event_handle(event,json_line):
             response = response.json()
             replyObj = TextSendMessage(text=str(response))
             line_bot_api.reply_message(rtoken, replyObj)
+        elif (msg == "สวัสดีค่ะ มาปรึกษาเรื่องการเลือกรับประทานอาหารพอดีว่าอยากลดน้ำหนัก")  : 
+            replyObj = TextSendMessage(text="ขอข้อมูลน้ำหนัก ส่วนสูง และประวัติการแพ้อาหารด้วยค่ะ")
+            line_bot_api.reply_message(rtoken, replyObj)
+        elif (msg == "น้ำหนัก 60 กก. ส่วนสูง 161 ซม. ไม่มีประวัติการแพ้อาหารค่ะ")  :  
+            replyObj = TextSendMessage(text="ขอแนะนำนะคะ อาหารประเภทโปรตีนช่วยในเรื่องของการลดน้ำหนักและไขมันได้ดีค่ะ จะแนะนำเป็นอกไก่ไม่มีหนังและพวกถั่วต่างๆทานเป็นอาหารว่างระหว่างวันได้ค่ะ")
+            line_bot_api.reply_message(rtoken, replyObj)
+        elif (msg == "ขอเทคนิคการออกกำลังกายด้วยได้ไหมคะ")  : 
+            replyObj = TextSendMessage(text="แนะนำเป็นการ cadio ในช่วงเช้าหลังตื่นนอนเพราะเป็นเวลาที่ร่างกายจะเผลาผลาญไขมันได้ดีค่ะ และ weight training ในช่วงเย็นเพื่อสร้างกล้ามเนื้อค่ะ")
+            line_bot_api.reply_message(rtoken, replyObj)     
         else :   
             headers = request.headers
             json_headers = ({k:v for k, v in headers.items()})
